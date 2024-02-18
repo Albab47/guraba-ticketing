@@ -54,6 +54,7 @@ for (const seat of seats) {
   });
 }
 
+// button event to calculate discount amount
 applyCouponBtn.addEventListener("click", (e) => {
   const CouponInput = getInputValueById("coupon");
   clearInputValueById("coupon");
@@ -66,6 +67,7 @@ applyCouponBtn.addEventListener("click", (e) => {
       showElementById("discountAmount");
       setElementTextById("discount", `BDT ${discount15}`);
       setElementTextById("grandTotal", grandTotal);
+      hideElementById('couponArea');
       break;
     case couponCouple:
       const discount20 = (totalPrice * 20) / 100;
@@ -74,8 +76,12 @@ applyCouponBtn.addEventListener("click", (e) => {
       showElementById("discountAmount");
       setElementTextById("discount", `BDT ${discount20}`);
       setElementTextById("grandTotal", grandTotal);
+      hideElementById('couponArea');
       break;
     default:
       alert("Enter a valid coupon code");
   }
 });
+
+
+
