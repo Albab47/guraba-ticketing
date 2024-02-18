@@ -3,8 +3,11 @@ let availableSeats = 40;
 let numberOfTicket = 0;
 let totalPrice = 0;
 let grandTotal = 0;
-const ticketPrice = 550;
 let ticketCount = 0;
+
+const ticketPrice = 550;
+const couponNew = 'NEW15'; 
+const couponCouple = 'COUPLE20'; 
 
 // get ref from element
 const orderItems = document.getElementById("orderItems");
@@ -42,6 +45,9 @@ for (const seat of seats) {
       setElementTextById('numberOfTicket', numberOfTicket);
       setElementTextById('totalPrice', totalPrice);
       setElementTextById('grandTotal', grandTotal);
+      if (numberOfTicket === 4) {
+        applyCouponBtn.removeAttribute('disabled')
+      }
     }
   });
 }
