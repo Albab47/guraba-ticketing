@@ -4,20 +4,24 @@ let numberOfTicket = 0;
 let totalPrice = 0;
 let grandTotal = 0;
 const ticketPrice = 550;
-let selectedSeat = 0;
+let ticketCount = 0;
 
 // get ref from element
 const orderItems = document.getElementById("orderItems");
 const seats = document.querySelectorAll(".seat");
+const selectedSeats = [];
+const applyCouponBtn = document.getElementById('applyCouponBtn');
 
 // iterate through all seat to add click event
 for (const seat of seats) {
   seat.addEventListener("click", (event) => {
-    selectedSeat++;
-    if (selectedSeat <= 4) {
+    const seatName = event.target.innerText;
+
+    if (ticketCount < 4 && !selectedSeats.includes(seatName)) {
+      ticketCount++;
       seat.style.backgroundColor = "#1DD100";
       seat.style.color = "#fff";
-      const seatName = event.target.innerText;
+      selectedSeats.push(seatName);
       const li = document.createElement("li");
       const h6 = document.createElement("h6");
       const p = document.createElement("p");
