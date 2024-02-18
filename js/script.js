@@ -2,15 +2,11 @@
 let availableSeats = 40;
 let numberOfTicket = 0;
 let totalPrice = 0;
-let grandPrice = 0;
+let grandTotal = 0;
 const ticketPrice = 550;
 let selectedSeat = 0;
 
 // get ref from element
-const availableSeatsText = document.getElementById("availableSeats");
-const numberOfTicketText = document.getElementById("numberOfTicket");
-const totalPriceText = document.getElementById("totalPrice");
-const grandTotalText = document.getElementById("grandTotal");
 const orderItems = document.getElementById("orderItems");
 const seats = document.querySelectorAll(".seat");
 
@@ -37,11 +33,11 @@ for (const seat of seats) {
       availableSeats--;
       numberOfTicket++;
       totalPrice += ticketPrice;
-      grandPrice += ticketPrice;
-      availableSeatsText.innerText = availableSeats;
-      numberOfTicketText.innerText = numberOfTicket;
-      totalPriceText.innerText = totalPrice;
-      grandTotalText.innerText = grandPrice;
+      grandTotal += ticketPrice;
+      setElementTextById('availableSeats', availableSeats);
+      setElementTextById('numberOfTicket', numberOfTicket);
+      setElementTextById('totalPrice', totalPrice);
+      setElementTextById('grandTotal', grandTotal);
     }
   });
 }
