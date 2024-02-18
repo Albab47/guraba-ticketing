@@ -6,14 +6,16 @@ let grandTotal = 0;
 let ticketCount = 0;
 
 const ticketPrice = 550;
-const couponNew = 'NEW15'; 
-const couponCouple = 'COUPLE20'; 
+const couponNew = "NEW15";
+const couponCouple = "COUPLE20";
+const selectedSeats = [];
 
 // get ref from element
 const orderItems = document.getElementById("orderItems");
 const seats = document.querySelectorAll(".seat");
-const selectedSeats = [];
-const applyCouponBtn = document.getElementById('applyCouponBtn');
+const applyCouponBtn = document.getElementById("applyCouponBtn");
+const couponField = document.getElementById("coupon");
+const discountAmount = document.getElementById("discountAmount");
 
 // iterate through all seat to add click event
 for (const seat of seats) {
@@ -41,13 +43,39 @@ for (const seat of seats) {
       numberOfTicket++;
       totalPrice += ticketPrice;
       grandTotal += ticketPrice;
-      setElementTextById('availableSeats', availableSeats);
-      setElementTextById('numberOfTicket', numberOfTicket);
-      setElementTextById('totalPrice', totalPrice);
-      setElementTextById('grandTotal', grandTotal);
+      setElementTextById("availableSeats", availableSeats);
+      setElementTextById("numberOfTicket", numberOfTicket);
+      setElementTextById("totalPrice", totalPrice);
+      setElementTextById("grandTotal", grandTotal);
       if (numberOfTicket === 4) {
-        applyCouponBtn.removeAttribute('disabled')
+        applyCouponBtn.removeAttribute("disabled");
       }
     }
   });
 }
+
+applyCouponBtn.addEventListener("click", (e) => {
+  const CouponInput = getInputValueById("coupon");
+  clearInputValueById("coupon");
+
+  switch (CouponInput) {
+    case couponNew:
+      const discount15 = (totalPrice * 15) / 100;
+      grandTotal -= discount15;
+      console.log(grandTotal);
+      showElementById("discountAmount");
+      setElementTextById("discount", `BDT ${discount15}`);
+      setElementTextById("grandTotal", grandTotal);
+      break;
+    case couponCouple:
+      const discount20 = (totalPrice * 20) / 100;
+      grandTotal -= discount20;
+      console.log(grandTotal);
+      showElementById("discountAmount");
+      setElementTextById("discount", `BDT ${discount20}`);
+      setElementTextById("grandTotal", grandTotal);
+      break;
+    default:
+      alert("Enter a valid coupon code");
+  }
+});
