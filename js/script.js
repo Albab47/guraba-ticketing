@@ -60,8 +60,8 @@ for (const seat of seats) {
       if (numberOfTicket === 4) {
         applyCouponBtn.removeAttribute("disabled");
       }
-    } else {
-      alert("You can't book ticket above 4");
+    } else if (ticketCount === 4) {
+      alert("You can't book more then 4 ticket");
     }
   });
 }
