@@ -7,7 +7,7 @@ let ticketCount = 0;
 
 const ticketPrice = 550;
 const couponNew = "NEW15";
-const couponCouple = "COUPLE20";
+const couponCouple = "Couple 20";
 const selectedSeats = [];
 
 // get ref from element
@@ -16,6 +16,15 @@ const seats = document.querySelectorAll(".seat");
 const applyCouponBtn = document.getElementById("applyCouponBtn");
 const couponField = document.getElementById("coupon");
 const discountAmount = document.getElementById("discountAmount");
+const nextBtn = document.getElementById("nextBtn");
+const passengerNumber = document.getElementById("passengerNumber");
+
+function enableNextBtn(numberOfTicket, passengerNumber) {
+  const numberLen = passengerNumber.length;
+  if (numberOfTicket > 0 && numberLen > 0) {
+    nextBtn.removeAttribute("disabled");
+  }
+}
 
 // iterate through all seat to add click event
 for (const seat of seats) {
@@ -47,9 +56,12 @@ for (const seat of seats) {
       setElementTextById("numberOfTicket", numberOfTicket);
       setElementTextById("totalPrice", totalPrice);
       setElementTextById("grandTotal", grandTotal);
+
       if (numberOfTicket === 4) {
         applyCouponBtn.removeAttribute("disabled");
       }
+    } else {
+      alert("You can't book ticket above 4");
     }
   });
 }
@@ -67,7 +79,7 @@ applyCouponBtn.addEventListener("click", (e) => {
       showElementById("discountAmount");
       setElementTextById("discount", `BDT ${discount15}`);
       setElementTextById("grandTotal", grandTotal);
-      hideElementById('couponArea');
+      hideElementById("couponArea");
       break;
     case couponCouple:
       const discount20 = (totalPrice * 20) / 100;
@@ -76,12 +88,15 @@ applyCouponBtn.addEventListener("click", (e) => {
       showElementById("discountAmount");
       setElementTextById("discount", `BDT ${discount20}`);
       setElementTextById("grandTotal", grandTotal);
-      hideElementById('couponArea');
+      hideElementById("couponArea");
       break;
     default:
       alert("Enter a valid coupon code");
   }
 });
 
-
-
+// event handler to enable next btn
+passengerNumber.addEventListener("change", (e) => {
+  const passengerNumber = e.target.value;
+  enableNextBtn(numberOfTicket, passengerNumber);
+});

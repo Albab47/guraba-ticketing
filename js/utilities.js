@@ -13,9 +13,15 @@ function showElementById(elemId) {
 }
 
 function getInputValueById(elemId) {
-    return document.getElementById(elemId).value;
+    const oldInputVal = document.getElementById(elemId).value;
+    document.getElementById(elemId).value = '';
+    return oldInputVal;
 }
 
 function clearInputValueById(elemId) {
     return document.getElementById(elemId).value = '';
+}
+
+function removeDisabledById(elemId) {
+   document.getElementById(elemId).removeAttribute('disabled');
 }
