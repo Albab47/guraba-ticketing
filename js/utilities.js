@@ -7,6 +7,10 @@ function hideElementById(elemId) {
     element.classList.add('hidden');
 }
 
+function removeElementClass(elementId, value) {
+    document.getElementById(elementId).classList.remove(value);
+}
+
 function showElementById(elemId) {
     const element = document.getElementById(elemId);
     element.classList.remove('hidden'); 

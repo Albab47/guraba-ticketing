@@ -100,3 +100,13 @@ passengerNumber.addEventListener("change", (e) => {
   const passengerNumber = e.target.value;
   enableNextBtn(numberOfTicket, passengerNumber);
 });
+
+// show modal on click
+nextBtn.addEventListener("click", () => {
+  my_modal_1.showModal();
+  clearInputValueById('passengerNumber');
+  for (const seat of seats) {
+    seat.style.backgroundColor = "#F7F8F8";
+    seat.style.color = "#03071280";
+  }
+});
