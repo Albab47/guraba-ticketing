@@ -24,7 +24,7 @@
   </head>
   <body class="font-inter">
     <!-- HEADER -->
-    <header class="container mx-auto px-3 2xl:px-44">
+    <header class="container mx-auto px-5 2xl:px-44">
       <!-- Navbar -->
       <nav class="navbar py-5">
         <div class="navbar-start">
@@ -55,7 +55,7 @@
               <li><a href="#">Search</a></li>
             </ul>
           </div>
-          <a class="text-4xl font-railway font-bold">G-Ticketing</a>
+          <a class="text-2xl md:text-4xl font-railway font-bold">G-Ticketing</a>
         </div>
 
         <div class="navbar-center hidden lg:flex">
@@ -81,7 +81,7 @@
       >
         <div class="hero-content text-center text-white">
           <div class="max-w-2xl">
-            <h1 class="text-6xl font-extrabold">
+            <h1 class="text-4xl md:text-6xl font-extrabold">
               Book your ticket easily with
               <span class="text-[#1DD100]">Guraba ticketing</span>
             </h1>
@@ -89,18 +89,53 @@
               Yes, you can run unit tests and view the results directly within
               the app. The integrated testing features allow for a streamlined.
             </p>
-            <button
+            <a href="#booking-sec"
               class="bg-[#1DD100] border-none py-4 px-7 font-railway rounded-xl text-xl font-bold text-black"
             >
               Buy Tickets
-            </button>
+            </a>
           </div>
         </div>
       </section>
+
+      <!-- info card container -->
+      <section class="flex flex-col md:flex-row justify-center p-2 gap-6 w-full md:*:w-80 *:bg-white md:-translate-y-12">
+        <div class="flex gap-4 py-9 px-8 rounded-3xl border-b-4 border-b-[#1DD100]">
+          <div>
+            <img src="./images/people.png">
+          </div>
+          <div>
+            <h2 class="text-4xl font-bold">500K+</h2>
+            <p class="text-lg text-[#03071299]">Registered users</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 py-9 px-8 rounded-3xl border-b-4 border-b-[#1DD100]">
+          <div>
+            <img src="./images/people.png">
+          </div>
+          <div>
+            <h2 class="text-4xl font-bold">500K+</h2>
+            <p class="text-lg text-[#03071299]">Registered users</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 py-9 px-8 rounded-3xl border-b-4 border-b-[#1DD100]">
+          <div>
+            <img src="./images/people.png">
+          </div>
+          <div>
+            <h2 class="text-4xl font-bold">500K+</h2>
+            <p class="text-lg text-[#03071299]">Registered users</p>
+          </div>
+        </div>
+
+      </section>
+
     </header>
 
     <!-- coupon section -->
-    <section class="container mx-auto my-20 px-3 2xl:px-44">
+    <section class="container mx-auto my-20 px-5 2xl:px-44">
       <h1 class="font-railway text-4xl font-bold text-center">
         Best offers for you
       </h1>
@@ -151,9 +186,9 @@
       </div>
     </section>
 
-    <main class="bg-[#F7F8F8] py-24">
+    <main class="bg-[#F7F8F8] py-24 rounded-t-[5.5rem] border-t-2 border-[#1DD100]">
       <!-- Ticket booking Section -->
-      <section class="container mx-auto my-20 px-3 2xl:px-44">
+      <section id="booking-sec" class="container mx-auto my-20 px-5 2xl:px-44">
         <!-- heading -->
         <div class="text-center max-w-[46rem] mx-auto">
           <h4 class="font-railway text-4xl font-bold text-center">
@@ -166,16 +201,16 @@
         </div>
 
         <!-- ongoing ticket -->
-        <div class="bg-white rounded-3xl flex mt-11">
+        <div class="flex flex-col lg:flex-row items-center bg-white rounded-3xl mt-11">
           <!-- ticket info -->
-          <div class="p-6">
-            <header class="flex justify-between mb-6">
+          <div class="p-5 flex-1 w-full">
+            <header class="flex flex-col md:flex-row md:justify-between gap-4 mb-6">
               <!-- bus name -->
               <div class="flex gap-3 items-center">
                 <img class="size-16" src="./images/bus-logo.png" alt="" />
                 <div>
                   <h4 class="font-railway text-lg lg:text-3xl font-bold">
-                    Greenline Paribahan
+                    Hanif Paribahan
                   </h4>
                   <p>Coach-009-WEB ! AC_Business</p>
                 </div>
@@ -200,7 +235,7 @@
               </div>
               <div class="border border-dashed"></div>
               <div
-                class="text-[#030712CC] *:bg-[#0307120D] *:rounded-xl text-base font-medium flex gap-1 lg:gap-6 *:py-2 *:px-4 py-5"
+                class="text-[#030712CC] *:bg-[#0307120D] *:rounded-xl text-base font-medium flex flex-col md:flex-row gap-1 lg:gap-6 *:py-2 *:px-4 py-5"
               >
                 <div>Boarding Point - Laxmipur</div>
                 <div>Dropping Point - Bogura</div>
@@ -209,12 +244,12 @@
             </div>
           </div>
 
-          <img src="./images/info-devider.png" alt="" />
+          <img class="hidden lg:block" src="./images/info-devider.png" alt="" />
 
           <!-- ticket price -->
-          <div class="w-48 flex flex-col items-center justify-center">
+          <div class="pr-6 w-1/4 flex flex-col items-center justify-center py-4">
             <img src="./images/fare.png" alt="" />
-            <h5 class="text-3xl font-railway font-bold">550tk</h5>
+            <h5 class="text-4xl font-railway font-bold">550tk</h5>
             <p class="text-2xl text-[#03071299]">Per Seat</p>
           </div>
         </div>
@@ -222,7 +257,7 @@
         <!-- ticket booking -->
         <div class="flex flex-col lg:flex-row gap-6 justify-between bg-white p-8 mt-11 rounded-3xl">
           <!-- seat area -->
-          <div class="w-full lg:w-7/12 border-r-2 border-dashed pr-6">
+          <div class="w-full lg:w-7/12 lg:border-r-4 lg:border-dashed lg:pr-10">
             <header>
               <h1 class="text-2xl font-semibold mb-6">Select your seat</h1>
 
@@ -240,7 +275,7 @@
               </div>
             </header>
             <!-- driver seat -->
-            <div class="flex justify-end">
+            <div class="flex justify-end mt-6">
               <div class="bg-[#0307121A] w-24 py-3 px-9 rounded-xl">
                 <img src="./images/tabler-icon-steering-wheel.svg" alt="" />
               </div>
@@ -398,7 +433,7 @@
             </div>
           </div>
           <!-- cart -->
-          <div class="w-full lg:w-2/5 px-8">
+          <div class="w-full lg:w-2/5">
             <h1 class="text-2xl font-semibold border-b-2 border-dashed pb-6">
               Select your seat
             </h1>
